@@ -1,0 +1,153 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #fff;
+}
+
+.main {
+    width: 1200px;
+    min-height: 100vh;
+    max-width: 100%;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    background-color: #333;
+}
+
+.nav__list {
+    display: flex;
+    list-style: none;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 48px;
+}
+
+/* Article */
+h1 {
+    line-height: 2rem;
+}
+
+article {
+    padding: 0 16px;
+    line-height: 1.6rem;
+}
+
+article img {
+    width: 640px;
+    max-width: 100%;
+    display: block;
+    margin: 32px auto;
+}
+
+.over-lay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.3);
+    display: none;
+    transition: transform linear 0.5s;
+    animation: check linear 0.5s;
+}
+
+
+.nav__mobile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    max-width: 350px;
+    height: 100%;
+    background-color: #fff;
+    transform: translateX(-100%);
+    transition: transform linear 0.5s;  
+
+}
+
+.nav__mobile ul {
+    list-style-type: none;
+
+}
+
+.nav__mobile ul li {
+    padding: 20px 0;
+    font-size: 25px;
+}
+
+.nav__mobile ul li a {
+    text-decoration: none;
+
+}
+
+.nav_icon_delete {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: red;
+    width: 30px;
+}
+
+.nav__icon {
+    margin-left: 10px;
+    display: none;
+}
+
+.checkbox {
+    display: none;
+}
+
+
+
+.checkbox:checked ~ .nav__mobile {
+    transform: translateX(0);
+    
+}
+.checkbox:checked ~ .over-lay {
+    display: block;
+}
+
+@keyframes check {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+@media only screen and (max-width: 1023px) {
+    .nav__pc {
+        display: none;
+    }
+    .nav__icon {
+        display: block;
+    }
+
+    .nav_icon-image {
+        width: 70%;
+
+    }
+   
+ 
+}
+
+@media only screen and (max-width: 600px) {
+    .nav__mobile {
+        max-width: 100%;
+    }   
+}
